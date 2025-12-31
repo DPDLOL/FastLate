@@ -1,0 +1,14 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Clearly lighter than background -->
+    <solid android:color="#242424"/>
+
+    <!-- Rounded corners -->
+    <corners android:radius="24dp"/>
+
+    <!-- Border so card NEVER blends in -->
+    <stroke
+        android:width="2dp"
+        android:color="#3A3A3A"/>
+
+</shape>
