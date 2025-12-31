@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- LIGHT MODE -->
+    <style name="Theme.FastLate"
+        parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <item name="android:windowBackground">#FFFFFF</item>
+
+        <!-- Status bar -->
+        <item name="android:statusBarColor">#FFFFFF</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+    </style>
+
+</resources>

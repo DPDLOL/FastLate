@@ -1,0 +1,233 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#121212"
+    android:fitsSystemWindows="true"
+    android:paddingTop="48dp"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="16dp">
+
+    <!-- TOP BAR: TITLE + THEME TOGGLE -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FastLate"
+            android:textSize="26sp"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/cascadiamonoregular"
+            android:layout_centerInParent="true" />
+
+        <ImageButton
+            android:id="@+id/btnThemeToggle"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_moon"
+            app:tint="@android:color/white"
+            android:contentDescription="@string/toggle_theme" />
+    </RelativeLayout>
+
+    <!-- MAIN CARD -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/bg_card_dark"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+
+    <!-- STATUS TILE -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/bg_button_primary"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/txtStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Not Paired"
+                android:textSize="20sp"
+                android:textColor="#FFFFFF"
+                android:fontFamily="@font/cascadiamonoregular" />
+
+            <TextView
+                android:id="@+id/txtLatency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Latency: -- ms"
+                android:textSize="14sp"
+                android:textColor="#E0E0E0"
+                android:fontFamily="@font/cascadiamonosemilight" />
+        </LinearLayout>
+
+        <!-- MODE TILE -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/bg_card_dark"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MODE"
+                android:textSize="12sp"
+                android:textColor="#AAAAAA"
+                android:fontFamily="@font/cascadiamonosemilight" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="English → English"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:fontFamily="@font/cascadiamonoregular" />
+        </LinearLayout>
+
+        <!-- DEVICE TILE -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/bg_card_dark"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DEVICE"
+                android:textSize="12sp"
+                android:textColor="#AAAAAA"
+                android:fontFamily="@font/cascadiamonosemilight" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="ESP32 • Mic Connected"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:fontFamily="@font/cascadiamonoregular" />
+        </LinearLayout>
+
+        <!-- VOICE ANIMATION -->
+        <LinearLayout
+            android:id="@+id/voiceAnimContainer"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <View
+                android:id="@+id/bar1"
+                android:layout_width="6dp"
+                android:layout_height="40dp"
+                android:layout_margin="6dp"
+                android:background="#4FC3F7" />
+
+            <View
+                android:id="@+id/bar2"
+                android:layout_width="6dp"
+                android:layout_height="60dp"
+                android:layout_margin="6dp"
+                android:background="#81D4FA" />
+
+            <View
+                android:id="@+id/bar3"
+                android:layout_width="6dp"
+                android:layout_height="40dp"
+                android:layout_margin="6dp"
+                android:background="#4FC3F7" />
+        </LinearLayout>
+
+        <!-- DEVICE INFO -->
+        <LinearLayout
+            android:id="@+id/deviceInfoContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_dark"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DEVICE INFO"
+                android:textSize="12sp"
+                android:textColor="#AAAAAA"
+                android:fontFamily="@font/cascadiamonosemilight" />
+
+            <TextView
+                android:id="@+id/txtDeviceName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name: --"
+                android:textColor="#FFFFFF"
+                android:fontFamily="@font/cascadiamonoregular" />
+
+            <TextView
+                android:id="@+id/txtDeviceAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MAC: --"
+                android:textColor="#CCCCCC"
+                android:fontFamily="@font/cascadiamonosemilight" />
+
+            <TextView
+                android:id="@+id/txtConnectionType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Connection: --"
+                android:textColor="#CCCCCC"
+                android:fontFamily="@font/cascadiamonosemilight" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- BUTTONS -->
+    <Button
+        android:id="@+id/btnPair"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="START PAIRING"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/cascadiamonoregular"
+        android:background="@drawable/bg_button_primary" />
+
+    <Button
+        android:id="@+id/btnListen"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="8dp"
+        android:text="PUSH TO LISTEN"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/cascadiamonoregular"
+        android:background="@drawable/bg_card_dark"
+        android:enabled="false"
+        android:alpha="0.4" />
+
+</LinearLayout>
